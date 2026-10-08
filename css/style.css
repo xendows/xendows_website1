@@ -1,0 +1,933 @@
+/* =========================================================
+   XENDOWS
+   Main Website CSS
+========================================================= */
+
+
+/* =========================================================
+   GOOGLE FONT FALLBACKS
+========================================================= */
+
+:root {
+
+    --violet: #8a2be2;
+    --dark-violet: #5b1597;
+
+    --dark-grey: #333333;
+    --light-grey: #eeeeee;
+
+    --black: #000000;
+    --white: #ffffff;
+
+    --navbar-height: 66px;
+    --scroll-height: 30px;
+
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background-color: var(--light-grey);
+
+    color: var(--violet);
+
+    font-family: "Lora", serif;
+    font-weight: 700;
+
+    padding-bottom: 65px;
+
+}
+
+
+/* =========================================================
+   MAIN NAVBAR
+========================================================= */
+
+.main-navbar {
+
+    width: 100%;
+    height: var(--navbar-height);
+
+    background-color: var(--dark-grey);
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    z-index: 1000;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    width: 220px;
+
+    padding-left: 25px;
+
+    color: var(--violet);
+
+    text-decoration: none;
+
+    font-family: "Candal", serif;
+    font-weight: 700;
+
+    font-size: 24px;
+
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+
+}
+
+
+/* =========================================================
+   NAV OPTIONS
+========================================================= */
+
+.nav-options {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.nav-link {
+
+    width: 110px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--violet);
+
+    text-decoration: none;
+
+    font-family: "Candal", serif;
+    font-weight: 700;
+
+    border-radius: 15px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+
+}
+
+
+.nav-link:hover {
+
+    background-color: var(--dark-violet);
+
+    color: var(--white);
+
+}
+
+
+.nav-link.active {
+
+    color: var(--violet);
+
+}
+
+
+.nav-link.active:hover {
+
+    color: var(--white);
+
+}
+
+
+/* =========================================================
+   PROFILE BADGE
+========================================================= */
+
+.profile-badge {
+
+    width: 30px;
+    height: 30px;
+
+    border: 2px solid var(--violet);
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    right: 25px;
+
+    top: 18px;
+
+    cursor: pointer;
+
+}
+
+
+.profile-badge img {
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.profile-tooltip {
+
+    position: absolute;
+
+    right: 0;
+
+    top: 40px;
+
+    width: max-content;
+
+    max-width: 220px;
+
+    padding: 8px 12px;
+
+    border: 2px solid var(--violet);
+
+    border-radius: 8px;
+
+    background-color: var(--light-grey);
+
+    color: var(--violet);
+
+    font-family: "Lora", serif;
+    font-weight: 700;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-5px);
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.profile-badge:hover .profile-tooltip {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.hamburger {
+
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    padding: 7px;
+
+}
+
+
+.hamburger span {
+
+    width: 25px;
+    height: 3px;
+
+    background-color: var(--violet);
+
+    display: block;
+
+    margin: 5px auto;
+
+}
+
+
+/* =========================================================
+   SECOND SCROLLING NAVIGATION
+========================================================= */
+
+.scroll-bar {
+
+    width: 100%;
+
+    height: var(--scroll-height);
+
+    background-color: var(--light-grey);
+
+    border-bottom: 1px solid var(--dark-grey);
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    position: relative;
+
+}
+
+
+.scroll-text {
+
+    display: inline-block;
+
+    padding-left: 100%;
+
+    line-height: 30px;
+
+    font-family: "Lora", serif;
+    font-weight: 700;
+
+    color: var(--violet);
+
+    animation: scrollingText 25s linear infinite;
+
+}
+
+
+@keyframes scrollingText {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.content-area {
+
+    width: 100%;
+
+    padding: 25px 25px 80px;
+
+}
+
+
+.cards-grid {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
+
+}
+
+
+/* =========================================================
+   NOTE / COURSE CARD
+========================================================= */
+
+.resource-card {
+
+    width: 100%;
+
+    border: 2px solid var(--violet);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    background-color: var(--light-grey);
+
+}
+
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.resource-image-area {
+
+    width: 100%;
+
+    height: 200px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.resource-image {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+/* =========================================================
+   IMAGE ALT / TITLE OVERLAY
+========================================================= */
+
+.resource-title {
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    min-height: 50px;
+
+    padding: 8px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: var(--violet);
+
+    background-color: rgba(238, 238, 238, 0.72);
+
+    font-family: "Lora", serif;
+    font-weight: 700;
+
+    font-size: 16px;
+
+}
+
+
+/* =========================================================
+   CARD SEPARATOR
+========================================================= */
+
+.resource-actions {
+
+    border-top: 2px solid var(--violet);
+
+    padding: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+/* =========================================================
+   VIEW / DOWNLOAD
+========================================================= */
+
+.resource-button {
+
+    width: 100%;
+
+    min-height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--violet);
+
+    color: var(--light-grey);
+
+    border: none;
+
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    font-family: "Candal", serif;
+    font-weight: 700;
+
+    font-size: 14px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+
+}
+
+
+.resource-button:hover {
+
+    background-color: var(--dark-violet);
+
+    color: var(--white);
+
+}
+
+
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
+.about-area {
+
+    width: 100%;
+
+    padding: 30px 0 90px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+.about-box {
+
+    width: 90%;
+
+    border: 2px solid var(--violet);
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    position: relative;
+
+    color: var(--violet);
+
+}
+
+
+.about-box h2 {
+
+    position: absolute;
+
+    left: 22px;
+
+    top: -16px;
+
+    background-color: var(--light-grey);
+
+    padding: 0 10px;
+
+    color: var(--violet);
+
+    font-family: "Candal", serif;
+    font-weight: 700;
+
+    font-size: 21px;
+
+}
+
+
+.about-box p {
+
+    font-family: "Lora", serif;
+    font-weight: 700;
+
+    line-height: 1.8;
+
+    text-align: justify;
+
+}
+
+
+/* =========================================================
+   FIXED APP LINKS
+========================================================= */
+
+.app-links {
+
+    position: fixed;
+
+    left: 0;
+    bottom: 12px;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    background: transparent;
+
+    z-index: 900;
+
+}
+
+
+.app-links a {
+
+    color: var(--violet);
+
+    text-decoration: none;
+
+    font-family: "Candal", serif;
+    font-weight: 700;
+
+    font-size: 15px;
+
+}
+
+
+.app-links span {
+
+    color: var(--black);
+
+    font-family: "Candal", serif;
+    font-weight: 700;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================================
+   MOBILE - 760px
+========================================================= */
+
+@media (max-width: 760px) {
+
+
+    /* =============================================
+       NAVBAR
+    ============================================== */
+
+    .main-navbar {
+
+        height: 66px;
+
+        justify-content: center;
+
+    }
+
+
+    /* =============================================
+       HAMBURGER
+    ============================================== */
+
+    .hamburger {
+
+        display: block;
+
+        position: absolute;
+
+        left: 10px;
+
+        top: 13px;
+
+        z-index: 1100;
+
+    }
+
+
+    /* =============================================
+       LOGO
+    ============================================== */
+
+    .logo {
+
+        width: auto;
+
+        height: 66px;
+
+        padding: 0;
+
+        justify-content: center;
+
+        text-align: center;
+
+        font-family: "Candal", serif;
+        font-weight: 700;
+
+        font-size: 22px;
+
+    }
+
+
+    /* =============================================
+       MOBILE NAVIGATION
+    ============================================== */
+
+    .nav-options {
+
+        position: absolute;
+
+        left: 0;
+        top: 66px;
+
+        width: 100%;
+
+        transform: none;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        background-color: var(--light-grey);
+
+        border-bottom: 1px solid var(--dark-grey);
+
+    }
+
+
+    .nav-options.show {
+
+        display: flex;
+
+    }
+
+
+    .nav-link {
+
+        width: 100%;
+
+        height: 48px;
+
+        border-radius: 0;
+
+        text-align: center;
+
+        color: var(--violet);
+
+        font-family: "Candal", serif;
+        font-weight: 700;
+
+    }
+
+
+    .nav-link:hover {
+
+        background-color: var(--dark-violet);
+
+        color: var(--white);
+
+    }
+
+
+    /* =============================================
+       PROFILE
+    ============================================== */
+
+    .profile-badge {
+
+        right: 15px;
+
+        top: 18px;
+
+    }
+
+
+    .profile-tooltip {
+
+        right: 0;
+
+    }
+
+
+    /* =============================================
+       CONTENT
+    ============================================== */
+
+    .content-area {
+
+        padding: 20px 15px 85px;
+
+    }
+
+
+    /* =============================================
+       ONE CARD PER LINE
+    ============================================== */
+
+    .cards-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+
+    /* =============================================
+       IMAGE
+    ============================================== */
+
+    .resource-image-area {
+
+        height: 200px;
+
+    }
+
+
+    /* =============================================
+       CARD
+    ============================================== */
+
+    .resource-card {
+
+        width: 100%;
+
+        border-radius: 15px;
+
+    }
+
+
+    .resource-title {
+
+        font-family: "Lora", serif;
+        font-weight: 700;
+
+    }
+
+
+    /* =============================================
+       ABOUT
+    ============================================== */
+
+    .about-area {
+
+        padding: 30px 0 90px;
+
+        gap: 30px;
+
+    }
+
+
+    .about-box {
+
+        width: 90%;
+
+        padding: 30px 20px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .about-box p {
+
+        font-family: "Lora", serif;
+        font-weight: 700;
+
+        text-align: justify;
+
+        line-height: 1.8;
+
+    }
+
+
+    /* =============================================
+       APP LINKS
+    ============================================== */
+
+    .app-links {
+
+        bottom: 12px;
+
+    }
+
+
+    .app-links a {
+
+        font-family: "Candal", serif;
+        font-weight: 700;
+
+        font-size: 15px;
+
+    }
+
+
+    .app-links span {
+
+        font-family: "Candal", serif;
+        font-weight: 700;
+
+        font-size: 15px;
+
+    }
+
+}

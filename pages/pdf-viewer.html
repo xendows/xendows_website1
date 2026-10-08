@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Xendows PDF Viewer</title>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        #pdfViewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <iframe
+        id="pdfViewer"
+        title="PDF Viewer"
+    ></iframe>
+
+
+    <script>
+
+        /*
+         * Only allow local PDF paths.
+         * This prevents the viewer from being used as
+         * a general external website frame.
+         */
+
+        const params = new URLSearchParams(
+            window.location.search
+        );
+
+        const pdf = params.get("pdf");
+
+        const viewer = document.getElementById("pdfViewer");
+
+        if (
+            pdf &&
+            pdf.endsWith(".pdf") &&
+            !pdf.includes("://") &&
+            !pdf.includes("\\")
+        ) {
+
+            viewer.src = pdf;
+
+        } else {
+
+            document.body.innerHTML = "";
+
+        }
+
+    </script>
+
+</body>
+</html>
